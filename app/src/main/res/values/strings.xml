@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Retrofit-with-coroutines</string>
+    <string name="title">Title</string>
+    <string name="id">Id</string>
 </resources>
