@@ -1,11 +1,12 @@
 package com.example.retrofit_with_coroutines.data
 
+import com.squareup.moshi.Json
 
 data class Posts(
-    val id: Int,
-    val title: String,
-    val Thumbnail: String,
-    val imageUrl: String
+    @Json(name = "id") val id: Int,
+    @Json(name = "title") val title: String,
+    @Json(name = "url") val url: String? = "",
+    @Json(name = "thumbnailUrl") val thumbnailUrl: String? = ""
 )
 
 object sampleData {
@@ -17,6 +18,7 @@ object sampleData {
             "https://via.placeholder.com/600/92c952"
         ),
         Posts(
+
             2,
             "Title 2",
             "https://via.placeholder.com/150/92c952",

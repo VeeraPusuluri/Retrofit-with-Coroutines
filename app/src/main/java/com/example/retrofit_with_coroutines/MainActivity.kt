@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.example.retrofit_with_coroutines.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private var _binding:ActivityMainBinding? = null
     private val binding get() = _binding!!

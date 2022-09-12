@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.TextView" parent="Widget.MaterialComponents.TextView">
+    <style name="Theme.Retrofitwithcoroutines.TextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textAppearance">@style/TextAppearance.Material3.ActionBar.Subtitle</item>
     </style>

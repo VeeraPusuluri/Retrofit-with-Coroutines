@@ -1,21 +1,23 @@
 package com.example.retrofit_with_coroutines.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.retrofit_with_coroutines.data.Posts
 import com.example.retrofit_with_coroutines.model.RecyclerviewRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class RecyclerviewViewModel @Inject constructor():ViewModel() {
+class PostsViewModel:ViewModel() {
 
-    @Inject lateinit var recyclerviewRepository:RecyclerviewRepository
+ var recyclerviewRepository:RecyclerviewRepository = RecyclerviewRepository()
 
     private val _imagesList = MutableLiveData<MutableList<Posts>?>()
-    val imagesList get() = _imagesList
+    val imagesList:LiveData<MutableList<Posts>?> get() = _imagesList
+    private val _currentPost:MutableLiveData<Posts> = MutableLiveData<Posts>()
+    val currentPost:LiveData<Posts> get() = _currentPost
+
+
     init {
         viewModelScope.launch {
             _imagesList.value = getImagesFromRepository()
@@ -24,5 +26,9 @@ class RecyclerviewViewModel @Inject constructor():ViewModel() {
 
    suspend fun getImagesFromRepository():MutableList<Posts>{
        return recyclerviewRepository.getImagesListFromRemote()
+    }
+
+    fun setCurrentPost(it: Posts) {
+        _currentPost.value = it
     }
 }

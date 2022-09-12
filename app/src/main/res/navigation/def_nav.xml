@@ -7,5 +7,17 @@
     <fragment
         android:id="@+id/recyclerviewFragment"
         android:name="com.example.retrofit_with_coroutines.RecyclerviewFragment"
-        android:label="RecyclerviewFragment" />
+        android:label="RecyclerviewFragment" >
+        <action
+            android:id="@+id/action_recyclerviewFragment_to_photoDetailFragment"
+            app:destination="@id/photoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoDetailFragment"
+        android:name="com.example.retrofit_with_coroutines.PostsDetailFragment"
+        android:label="PhotoDetailFragment" >
+        <action
+            android:id="@+id/action_photoDetailFragment_to_recyclerviewFragment"
+            app:destination="@id/recyclerviewFragment" />
+    </fragment>
 </navigation>
