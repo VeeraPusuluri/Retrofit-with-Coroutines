@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/def_nav"
+    app:startDestination="@id/recyclerviewFragment">
+
+    <fragment
+        android:id="@+id/recyclerviewFragment"
+        android:name="com.example.retrofit_with_coroutines.RecyclerviewFragment"
+        android:label="RecyclerviewFragment" >
+        <action
+            android:id="@+id/action_recyclerviewFragment_to_photoDetailFragment"
+            app:destination="@id/photoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoDetailFragment"
+        android:name="com.example.retrofit_with_coroutines.PostsDetailFragment"
+        android:label="PhotoDetailFragment" >
+        <action
+            android:id="@+id/action_photoDetailFragment_to_recyclerviewFragment"
+            app:destination="@id/recyclerviewFragment" />
+    </fragment>
+</navigation>

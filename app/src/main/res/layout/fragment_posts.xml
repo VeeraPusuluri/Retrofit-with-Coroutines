@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.slidingpanelayout.widget.SlidingPaneLayout
+        android:id="@+id/sliding_pane"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_photos"
+            android:layout_width="550dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            tools:context=".RecyclerviewFragment"
+            tools:listitem="@layout/recyclerview_layout_item" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_postdetails"
+            android:name="com.example.retrofit_with_coroutines.PostsDetailFragment"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </androidx.slidingpanelayout.widget.SlidingPaneLayout>
+</layout>
