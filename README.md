@@ -1,2 +1,2 @@
 # Retrofit-with-Coroutines
-Retrofit with Coroutines using MVVM, ViewBinding, Retrofit, Coroutines.
+Sample Application that fetches posts from server using Retrofit, Coroutines, MVVM, ViewBinding.
