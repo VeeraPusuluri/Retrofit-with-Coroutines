@@ -4,12 +4,15 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
+
+
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the Code
+      - name: Checkout the code
         uses: actions/checkout@v2
 
       - name: Run Lint
@@ -20,5 +23,3 @@ jobs:
         with:
           name: index.html
           path: app/build/reports/lint-results-debug.html
-
-
