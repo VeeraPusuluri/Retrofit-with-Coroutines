@@ -50,11 +50,11 @@ jobs:
       - name: Run Espresso Tests
       - uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 29
+          api-level: 32
           script: ./gradlew connectedCheck
 
       - name: upload test report
         uses: actions/upload-artifact@v2
         with:
           name: instrumentaiton_test_report
-          path: app/build/reports/androidTest/connected/
+          path: app/build/reports/androidTests/connected/
