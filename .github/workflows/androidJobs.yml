@@ -1,0 +1,29 @@
+name: test,build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    brnaches: [ main ]
+  workflow_dispatch:
+  
+  
+  
+jobs:
+
+  lint:
+    runs-on: ubuntu_latest
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+      
+    - name: run build
+      run: ./gradlew lint
+      
+    - name: upload html report
+      uses: actions/upload-artifact@v2
+      with: 
+        name: report path
+        path: app/build/reports/lint-results-debug.html
+
+
