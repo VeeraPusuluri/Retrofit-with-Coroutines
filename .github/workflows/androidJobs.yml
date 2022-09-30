@@ -46,10 +46,15 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
+      - name: setup JDk 11
+        uses: actions/setup-java@11
+        with:
+          java-version: 11
       - name: Run espresso tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
+          emulator-build: 6110076
           script: ./gradlew connectedCheck
 
       - name: Upload test report
