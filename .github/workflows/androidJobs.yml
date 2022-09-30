@@ -41,23 +41,23 @@ jobs:
        
        
  instrumentation-test:
-   needs: [unit-test]
-   runs-on: macos-latest
-   steps:
-     - name: checkout code
-       uses: actions/checkout@v2
-      
-     - name: run ui test
-       uses: reactivecircus/android-emulator-runner@v2
-       with:
-        api-level: 32
-        script: ./gradlew connectedCheck
-       
-     - name: upload ui test results
-       uses: actions/upload-artifact@v2
-       with:
-        name: ui test results
-        path: app/build/reports/androidTests/connected/
+    needs: [unit-test]
+    runs-on: macos-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Run espresso tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 32
+          script: ./gradlew connectedCheck
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: instrumentation_test_report
+          path: app/build/reports/androidTests/connected/
     
   
    
