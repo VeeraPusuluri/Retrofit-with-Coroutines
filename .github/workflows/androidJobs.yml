@@ -1,29 +1,21 @@
-name: test,build
+name: android tests, builds checks
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    brnaches: [ main ]
-  workflow_dispatch:
-  
-  
-  
+    branches: [master]
+  pull_request: 
+    branches: [master]
+    
 jobs:
-
-  lint:
-    runs-on: ubuntu_latest
-    steps:
-    - name: checkout code
+ lint: 
+   runs-on: ubuntu-latest
+   steps:
+    - name: check out code 
       uses: actions/checkout@v2
       
-    - name: run build
-      run: ./gradlew lint
+    - name: build application with gradle
+      run: ./gradlew lintDebug
       
-    - name: upload html report
+    - name: upload artifact
       uses: actions/upload-artifact@v2
-      with: 
-        name: report path
-        path: app/build/reports/lint-results-debug.html
-
-
+  
