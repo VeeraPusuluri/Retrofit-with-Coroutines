@@ -19,4 +19,10 @@ jobs:
       
     - name: upload artifact
       uses: actions/upload-artifact@v2
+      with:
+        name: build results
+        path: app/build/reports/lint-results-debug.html
+  
+
+  
   
