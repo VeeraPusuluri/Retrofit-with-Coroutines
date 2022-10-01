@@ -9,11 +9,9 @@ plugins {
 
 sonarqube {
     properties {
-        property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.projectVersion", "1.0.1"
         property "sonar.projectKey", "VeeraPusuluri_Retrofit-with-Coroutines"
-        property "sonar.organization", "VeeraPusuluri"
-        property "sonar.login", System.getenv("SONAR_TOKEN")
+        property "sonar.organization", "veerapusuluri"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
 
