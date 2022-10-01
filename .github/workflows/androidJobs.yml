@@ -18,7 +18,7 @@ jobs:
       - name: setup java 11
         uses: actions/setup-java@v1
         with:
-          setup-java: 11
+          java-version: 11
 
       - name: create package
         run: ./gradlew assembleDebug --stacktrace
