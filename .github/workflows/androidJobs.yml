@@ -9,7 +9,6 @@ on:
     
 jobs:
   package:
-    needs: [ static-code-analysis ]
     runs-on: ubuntu-latest
 
     steps:
